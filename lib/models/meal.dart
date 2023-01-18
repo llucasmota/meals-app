@@ -35,4 +35,30 @@ class Meal {
       required this.isVegan,
       required this.isVegetarian,
       required this.duration});
+
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.simple:
+        return 'Simples';
+      case Complexity.medium:
+        return 'Médio';
+      case Complexity.difficult:
+        return 'Difícil';
+      default:
+        return 'Desconhecido';
+    }
+  }
+
+  String get costText {
+    switch (cost) {
+      case Cost.cheap:
+        return 'Barato';
+      case Cost.fair:
+        return 'Justo';
+      case Cost.expensive:
+        return 'Alto';
+      default:
+        return 'Desconhecido';
+    }
+  }
 }
