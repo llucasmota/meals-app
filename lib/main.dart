@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:meals/screens/tabs_screen.dart';
-import 'package:meals/screens/categories_screen.dart';
+import 'package:meals/screens/settings_sceen.dart';
+import 'package:meals/screens/tab_screen_down.dart';
 import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/utils/app_routes.dart';
 import './screens/categories_meals_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,10 +37,11 @@ class MyApp extends StatelessWidget {
             ),
       ),
       routes: {
-        '/': (ctx) => TabsScreen(),
-        AppRoutes.HOME: (ctx) => const TabsScreen(),
+        // '/': (ctx) => const TabsScreenDown(),
+        AppRoutes.HOME: (ctx) => const TabsScreenDown(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
-        AppRoutes.MEALS_DETAIL: (ctx) => MealDetailScreen()
+        AppRoutes.MEALS_DETAIL: (ctx) => const MealDetailScreen(),
+        AppRoutes.SETTINGS: (ctx) => const SettingsScreen()
       },
       // tratamento para rotas especificas
       // onGenerateRoute: (settings) {
@@ -72,9 +75,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DeliMeals'),
+        title: const Text('DeliMeals'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Navegar é preciso!!'),
       ),
     );
